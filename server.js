@@ -3,7 +3,10 @@ const fs=require("fs");
 const dispatcher=require("./dispatcher");
 const http=require("http");
 let header={"Content-Type":"text/html;charset=utf-8"};
-let headerJSON={"Content-Type":"application/json;charset=utf-8", "Access-Control-Allow-Origin": "*"};
+let headerJSON={"Content-Type":"application/json;charset=utf-8"};
+headerJSON('Access-Control-Allow-Origin: *');
+headerJSON('Access-Control-Allow-Credentials: true');
+headerJSON('Access-Control-Max-Age: 604800');
 
 
 const mongoFunctions=require("./mongoFunctions");
