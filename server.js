@@ -27,7 +27,8 @@ dispatcher.addListener("GET", "/api/addLeaderboard", function (req, res) {
     function (err, data) {
       if (err.codErr == -1) {
         console.log(data);
-        res.send("Inserimento andato a buon fine.");
+        res.writeHead(200, headerJSON);
+        res.end(JSON.stringify("Inserimento andato a buon fine."));
       } else
         error(req, res, {
           code: err.codErr,
@@ -44,7 +45,8 @@ dispatcher.addListener("GET", "/api/loadLeaderboard", function (req, res) {
     [{ $sort: { score: 1 } }],
     function (err, data) {
       if (err.codErr == -1) {
-        res.send(data);
+        res.writeHead(200, headerJSON);
+        res.end(JSON.stringify(data));
       } else error(req, res, { code: err.codErr, message: err.message });
     }
   );
