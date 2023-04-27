@@ -3,7 +3,7 @@ const fs=require("fs");
 const dispatcher=require("./dispatcher");
 const http=require("http");
 let header={"Content-Type":"text/html;charset=utf-8"};
-let headerJSON={"Content-Type":"application/json;charset=utf-8"};
+let headerJSON={"Content-Type":"application/json;charset=utf-8", "Access-Control-Allow-Origin": "*"};
 
 
 const mongoFunctions=require("./mongoFunctions");
