@@ -50,7 +50,6 @@ dispatcher.addListener("GET", "/api/loadLeaderboard", function (req, res) {
   );
 });
 
-app.get
 
 /* ************************************************************* */
 function error(req,res,err){
