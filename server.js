@@ -16,8 +16,8 @@ let port = 8888;
 
 dispatcher.addListener("GET", "/api/addLeaderboard", function (req, res) {
   let query = {
-    player: req.query.player,
-    score: parseInt(req.query.score),
+    player: req["get"]["player"],
+    score: parseInt(req["get"]["score"]),
   };
   mongoFunctions.insertOne(
     req,
